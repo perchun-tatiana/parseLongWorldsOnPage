@@ -45,7 +45,7 @@ export class ParseController {
 
     console.log('wordsArr',wordsArr)
 
-    const pdfBuffer = await this.createPdf.getBuffer(result);
+    const pdfBuffer = await this.createPdf.getBuffer(wordsArr.slice(0, 10), body.url);
 
     res.set({
       'Content-Type': 'application/pdf',
